@@ -13,4 +13,8 @@ export class UserService {
   getAllUsers() {
     return this.httpClient.get<UserModel[]>(this.baseUrl)
   }
+
+  deleteUserById(id: number) {
+    this.httpClient.delete<any>(`${this.baseUrl}/${id}`)
+  }
 }
