@@ -98,6 +98,23 @@ hs_err_pid*
 .settings/
 *.sublime-workspace
 
-# System Files
-.DS_Store
-Thumbs.db
+
+/app/**/*.js
+/app/**/*.js.map
+
+# dependencies
+frontend/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+frontend/e2e/*.js
+frontend/e2e/*
