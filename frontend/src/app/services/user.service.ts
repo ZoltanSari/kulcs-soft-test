@@ -15,11 +15,11 @@ export class UserService {
   }
 
   deleteUserById(id: number) {
-    this.httpClient.delete<any>(`${this.baseUrl}/${id}`)
+    this.httpClient.delete<void>(`${this.baseUrl}/${id}`).subscribe();
   }
 
-  registration(userDTO: { username: string,
-                          password: string} ) {
-    return this.httpClient.post<any>(`${this.baseUrl}/registration`, userDTO).subscribe();
+  addUser(userDTO: { username: string,
+                      email: string} ) {
+    return this.httpClient.post<any>(`${this.baseUrl}/add-user`, userDTO).subscribe();
   }
 }
