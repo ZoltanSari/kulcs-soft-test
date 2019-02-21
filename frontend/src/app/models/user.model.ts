@@ -1,8 +1,8 @@
 export class UserModel {
 
-  private id: number;
-  private name: string;
-  private email: string;
+  public id: number;
+  public name: string;
+  public email: string;
 
 
   constructor(id: number, name: string, email: string) {
