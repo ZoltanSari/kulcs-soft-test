@@ -1,0 +1,30 @@
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let user of users">
+  <tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td><button (click)="onDeleteUser(user.id)">X</button></td>
+  </tr>
+  </tbody>
+</table>
+<form class="join pure-form pure-form-stacked"
+      [formGroup]="addForm"
+      (ngSubmit)="onAddSubmit()">
+  <label>Username</label>
+  <input type="text" placeholder="Username"
+         formControlName="username">
+  <label for="email">Email</label>
+  <input type="text" id="email" placeholder="Email"
+         formControlName="email">
+  <button type="submit" class="pure-button pure-button-secondary">
+    Add
+  </button>
+</form>
