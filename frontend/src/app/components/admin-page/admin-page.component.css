@@ -1,0 +1,47 @@
+.container-fluid {
+  margin: 100px;
+}
+
+.forms {
+  text-align: center;
+}
+
+table {
+  background-color: indianred;
+}
+
+tr {
+  text-align: center;
+  color: white;
+}
+
+input {
+  padding: 5px;
+  font-size: 150%;
+}
+
+label {
+  padding: 5px;
+  font-size: 130%;
+  text-align: left;
+}
+
+button {
+  padding: 10px;
+  font-size: 140%;
+  border-radius: 7px;
+  margin-top: 15px;
+  color: white;
+  background-color: #808080a3;
+}
+
+button:hover {
+  color: #9e9e9e;
+}
+
+#delete-button {
+  font-size: 50%;
+  color: white;
+  background-color: red;
+  margin-top: -20px;
+}
