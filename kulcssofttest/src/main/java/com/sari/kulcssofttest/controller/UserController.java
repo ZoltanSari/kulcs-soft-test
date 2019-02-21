@@ -26,7 +26,7 @@ public class UserController {
         userService.deleteUserById(id);
     }
 
-    @PostMapping("/registration")
+    @PostMapping("/add-user")
     public void registration(@RequestBody UserDTO userDTO) {
         userService.addUser(userDTO);
     }
