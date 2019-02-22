@@ -48,7 +48,7 @@ export class UserService {
     password: string
   }) {
     this.httpClient.post<any>(`${this.baseUrl}/registration`, adminDTO).subscribe();
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 }
 
