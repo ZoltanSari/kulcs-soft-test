@@ -17,7 +17,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
 Running the project
 
-Go to the backend/src/main/java/com.sari.kulcssofttest package and run KulcssofttestApplication.java
+Go to the kulcssoftest/src/main/java/com.sari.kulcssofttest package and run KulcssofttestApplication.java
 
 Go to the frontend module and run ng serve
 
