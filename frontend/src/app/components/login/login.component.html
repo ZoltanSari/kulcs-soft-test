@@ -1,12 +1,15 @@
-<form>
-    <div>
-      <label>Admin</label>
-      <input type="text"
-             placeholder="Admin">
-      <label>Password</label>
-      <input type="password"
-             placeholder="Password">
-      <button type="submit"
-              class="pure-button pure-button-secondary">Login</button>
+<div class="col-12">
+  <h3>Login</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" class="form-control" formControlName="username">
     </div>
-</form>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
