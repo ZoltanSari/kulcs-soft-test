@@ -1,9 +1,10 @@
-.container-fluid {
-  margin: 100px;
-}
 
 .forms {
   text-align: center;
+}
+
+a{
+  font-size: 30px;
 }
 
 table {
@@ -12,7 +13,7 @@ table {
 
 tr {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 input {
