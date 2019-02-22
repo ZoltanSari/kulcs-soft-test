@@ -29,6 +29,7 @@ export class AdminPageComponent implements OnInit {
     this.userService.addUser(userDetails);
     this.addForm.reset();
     window.location.reload();
+    alert("added user");
   }
 
   private initForms() {
@@ -40,6 +41,11 @@ export class AdminPageComponent implements OnInit {
 
   onDeleteUser(id: number) {
     this.userService.deleteUserById(id);
+    alert("delete user");
     window.location.reload();
+  }
+
+  logout() {
+    this.userService.logoutUser();
   }
 }

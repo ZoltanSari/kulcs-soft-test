@@ -50,5 +50,9 @@ export class UserService {
     this.httpClient.post<any>(`${this.baseUrl}/registration`, adminDTO).subscribe();
     this.router.navigate(['login']);
   }
+
+  logoutUser() {
+    this.authService.logout();
+  }
 }
 
