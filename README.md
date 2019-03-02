@@ -1,3 +1,7 @@
+If you would like to check the project before build it, you can do it here:
+
+https://kulcs-soft-assignment.herokuapp.com/
+
 Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
