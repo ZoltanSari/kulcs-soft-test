@@ -30,12 +30,15 @@
                placeholder="Username"
                autocomplete="off"
                formControlName="username">
-        <label>Email</label>
+        <label for="email">Email</label>
         <input type="text"
                placeholder="Email"
+               id="email"
                autocomplete="off"
                formControlName="email">
-        <button type="submit" class="pure-button pure-button-secondary">
+        <button type="submit"
+                class="btn btn-primary"
+                [disabled]="!addForm.valid">
           Add
         </button>
       </form>
