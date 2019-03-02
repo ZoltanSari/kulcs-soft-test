@@ -1,6 +1,8 @@
 package com.sari.kulcssofttest.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.sari.kulcssofttest.dto.ErrorDTO;
 import com.sari.kulcssofttest.model.Admin;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -25,9 +27,13 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     private AuthenticationManager authenticationManager;
 
+    private JwtAuthenticationFailureHandler failureHandler;
 
-    public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+
+    public JWTAuthenticationFilter(AuthenticationManager authenticationManager,
+                                   JwtAuthenticationFailureHandler failureHandler) {
         this.authenticationManager = authenticationManager;
+        this.failureHandler = failureHandler;
         this.setFilterProcessesUrl(LOGIN_URL);
     }
 
@@ -66,5 +72,20 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .compact();
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
         response.addHeader("Access-Control-Expose-Headers", HEADER_STRING);
+    }
+
+    @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request,
+                                              HttpServletResponse response,
+                                              AuthenticationException failed) throws IOException, ServletException {
+        logger.info("Failed authentication!");
+
+        response.getWriter().write(new Gson().toJson(ErrorDTO.builder()
+                .error("invalid parameters")
+                .message("Username or password is incorrect!")
+                .build()));
+        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+
+        this.failureHandler.onAuthenticationFailure(request, response, failed);
     }
 }
