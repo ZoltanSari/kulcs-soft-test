@@ -23,11 +23,19 @@ public class AdminService {
         return null;
     }
 
-    public void registration(AdminDTO adminDTO) {
+    public boolean registration(AdminDTO adminDTO) {
+        if (this.checkIsAdminNameAlreadyExist(adminDTO.getUsername())) return false;
+
         Admin newAdmin = Admin.builder()
                 .username(adminDTO.getUsername())
                 .password(this.bCryptPasswordEncoder.encode(adminDTO.getPassword()))
                 .build();
         this.adminRepository.save(newAdmin);
+
+        return true;
+    }
+
+    private boolean checkIsAdminNameAlreadyExist(String adminName) {
+        return this.adminRepository.findByUsername(adminName) != null;
     }
 }
