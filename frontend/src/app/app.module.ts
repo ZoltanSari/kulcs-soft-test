@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import {AppRoutingModule} from "./app-routing-module";
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { RegisterComponent } from './components/register/register.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 import {UserService} from "./services/user.service";
 import {AuthInterceptor} from "./interceptors/auth-interceptor";
 import {AuthService} from "./services/auth.service";
@@ -18,7 +18,7 @@ import {Guard} from "./guard/guard";
     AppComponent,
     LoginComponent,
     AdminPageComponent,
-    RegisterComponent
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
